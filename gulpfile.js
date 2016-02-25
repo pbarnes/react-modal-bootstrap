@@ -122,5 +122,5 @@ gulp.task('example', function (callback) {
 });
 
 gulp.task('build', function (callback) {
-  runSequence('lib', 'example', callback);
+  runSequence('lib', /*'example',*/ callback);
 });
