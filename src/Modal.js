@@ -134,7 +134,8 @@ function findParentNode(parentClass, childObj) {
     let dialogClass = ClassNames({
       'modal-dialog': true,
       'modal-dialog-open': this.props.isOpen
-    }, this.props.size);
+    }, this.props.size,
+    this.props.className);
 
     let dialogStyles = ObjectAssign({
       base: {
