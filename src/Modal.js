@@ -100,7 +100,9 @@ function findParentNode(parentClass, childObj) {
     let parentNode = findParentNode('modal-backdrop', ReactDOM.findDOMNode(this.refs.backDrop));
     if (parentNode) {
       if (this.props.isOpen) {
-        parentNode.className += parentNode.className.length ? ' children-open' : 'children-open';
+        if (!parentNode.classList.contains('children-open')) {
+          parentNode.className += parentNode.className.length ? ' children-open' : 'children-open';
+        }
         parentNode.style.overflowY = 'hidden';
       } else {
         parentNode.className = parentNode.className.replace(/ ?children-open/, '');
